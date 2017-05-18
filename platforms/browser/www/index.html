@@ -775,10 +775,10 @@ function onDeviceReady() {
 	navigator.globalization.getPreferredLanguage(
 		function (language) {    
 		    userLang = language.value; 
-		  //  alert('language: ' + language.value + '\n');
+		    alert('language: ' + language.value + '\n');
 		},
 		function () {
-		  //  alert('Error getting language\n');
+		    alert('Error getting language\n');
 		}
 	    );
 
