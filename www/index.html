@@ -496,10 +496,10 @@
 			function loadLang2(lang){
 
 
-
+				alert("inicio parsea datos");
 
 				$.getJSON( "_locales/"+lang+"/messages.json", function( data ) {
-
+						alert("si parsea"+data["Product"]["message"]);
 				   document.getElementsByClassName("heading")[0].innerHTML = data["AppTitle"]["message"];
 				   document.getElementsByClassName("sub-heading")[0].innerHTML = data["subHeading"]["message"];
 				   document.getElementsByClassName("key-head")[0].innerHTML = data["Product"]["message"];
