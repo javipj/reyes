@@ -775,17 +775,18 @@ function onDeviceReady() {
 	navigator.globalization.getPreferredLanguage(
 		function (language) {    
 		    userLang = language.value; 
-		    alert('language: ' + language.value + '\n');
+		    $("#country").msDropdown();
+	    	    loadLang(userLang.split("-")[0]);
+		    
 		},
 		function () {
-		    alert('Error getting language\n');
+		    //alert('Error getting language\n');
 		}
 	    );
 
 
 
-	$("#country").msDropdown();
-	loadLang(userLang);
+	
 
 }
 
