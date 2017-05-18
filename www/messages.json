@@ -1,0 +1,83 @@
+{
+   "AppTitle": {
+      "description": "Application Title",
+      "message": "LocoFinder.com"
+   },
+   "Country": {
+      "description": "Choose Country",
+      "message": "Search on"
+   },
+   "Category": {
+      "description": "Select Category",
+      "message": "Choose a"
+   },
+   "Product": {
+      "description": "Product",
+      "message": "What are you looking for?"
+   },
+   "Discount": {
+      "description": "Discount range.",
+      "message": "Rate of Discount"
+   },
+   "Price": {
+      "description": "Range of price",
+      "message": "Range of Price"
+   },
+   "SelFrom": {
+      "description": "From ",
+      "message": "From:"
+   },
+   "SelTo": {
+      "description": "To ",
+      "message":	 "To:"
+   },
+   "Sort": {
+      "description": "Sort By",
+      "message": "Sort By"
+   },
+   "SelSortBy": {
+      "description": "Sort By: ",
+      "message": "Sort By: "
+   },
+   "SelTo": {
+      "description": "To ",
+      "message": "To "
+   },
+   "SortAtoZ": {
+      "description": "Alphabetical: A to Z",
+      "message": " Alphabetical: A to Z "
+   },
+   "SortBestselling": {
+      "description": "Bestselling",
+      "message": " Bestselling "
+   },
+   "SortCustReview": {
+      "description": "Avg Customer Review",
+      "message": " Avg Customer Review "
+   },
+   "SortFeatureItems": {
+      "description": "Featured Items",
+      "message": " Featured Items "
+   },
+   "SortHtoL": {
+      "description": "Price: High to Low",
+      "message": " Price: High to Low "
+   },
+   "SortLtoH": {
+      "description": "Price: Low to High",
+      "message": " Price: Low to High "
+   },
+   "SortRelevance": {
+      "description": "Relevance",
+      "message": " Relevance "
+   },
+   "SortZtoA": {
+      "description": " Alphabetical: Z to A",
+      "message": "  Alphabetical: Z to A "
+   },
+   "btnSearchTxt": {
+      "description": "Button lable",
+      "message": "Find Amazon Deals"
+   }
+   
+}

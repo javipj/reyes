@@ -1,0 +1,130 @@
+{
+   "AppTitle": {
+      "description": "Application Title",
+      "message": "Descuento del Amazonas Buscador:"
+   },
+   "Choose": {
+      "description": "Choose:",
+      "message": "elegir:"
+   },
+   "SelCountry": {
+      "description": "Select Country",
+      "message": "Seleccione el país"
+   },
+   "SelDepartment": {
+      "description": "Select Department",
+      "message": "Seleccionar Departamento"
+   },
+   "SelDiscountRange": {
+      "description": "Discount range:",
+      "message": "Descuento rango:"
+   },
+   "SelFrom": {
+      "description": "From ",
+      "message": "De "
+   },
+   "SelKeyword": {
+      "description": "Keyword/s (optional):",
+      "message": "Palabra / s (opcional):"
+   },
+   "SelPrice": {
+      "description": " Price: (Optional)",
+      "message": " Precio: (Opcional) "
+   },
+   "SelShowFree": {
+      "description": "Only show free delivery ",
+      "message": " Mostrar sólo la entrega gratuita "
+   },
+   "SelSortBy": {
+      "description": "Sort By: ",
+      "message": "Ordenado por: "
+   },
+   "SelTo": {
+      "description": "To ",
+      "message": "a "
+   },
+   "SortAtoZ": {
+      "description": "Alphabetical: A to Z",
+      "message": " Alfabético: A a Z "
+   },
+   "SortBestselling": {
+      "description": "Bestselling",
+      "message": " Popularidad "
+   },
+   "SortCustReview": {
+      "description": "Avg Customer Review",
+      "message": " Opinión media de los clientes "
+   },
+   "SortFeatureItems": {
+      "description": "Featured Items",
+      "message": " Caracteristicas del Producto "
+   },
+   "SortHtoL": {
+      "description": "Price: High to Low",
+      "message": " Precio: de más alto a más bajo "
+   },
+   "SortLtoH": {
+      "description": "Price: Low to High",
+      "message": " Precio: de más bajo a más alto "
+   },
+   "SortRelevance": {
+      "description": "Relevance",
+      "message": " Relevantes "
+   },
+   "SortZtoA": {
+      "description": " Alphabetical: Z to A",
+      "message": "  Alfabético: Z a la A "
+   },
+   "btnSearchTxt": {
+      "description": "Button lable",
+      "message": " Búsqueda de descuento "
+   },
+   "extDescription": {
+      "description": "Description of the Application.",
+      "message": "Encontrar descuentos ocultos en Amazon. Buscador de descuento le ayuda a encontrar las mejores ofertas hasta que el 90% de descuento"
+   },
+   "extName": {
+      "description": "Extension Name.",
+      "message": "Amazon Discount Finder"
+   },
+   "sellowrangeDiscount": {
+      "description": "Select lower range for pricier or niche goods",
+      "message": "Seleccione el rango inferior de los bienes más caros o de nicho"
+   },
+   "yourDiscount": {
+      "description": "Pick your discount:",
+      "message": "Elige tu descuento:"
+   },
+   "subHeading":{
+      "description": "Find the best Amazon deals",
+      "message": "Encuentra las mejores ofertas de Amazonas"
+   },
+   "Product":{
+      "description": "What are you looking for?",
+      "message": "¿Qué estás buscando?"
+   },
+   "Discount":{
+      "description": "Rate of Discount",
+      "message": "Tasa de Descuento"
+   },
+   "Price":{
+      "description": "Range of Price",
+      "message": "Rango de Precio"
+   },
+   "Sort":{
+      "description": "Pick your discount:",
+      "message": "Elige tu descuento:"
+   },
+   "From":{
+      "description": "From:",
+      "message": "De:"
+   },
+   "To":{
+      "description": "To:",
+      "message": "A:"
+   },
+   "btnSearchTxt":{
+      "description": "Find Amazon Deals",
+      "message": "Encuentre ofertas de Amazonas"
+   }
+}

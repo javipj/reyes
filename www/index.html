@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+
+	    <meta charset="utf-8" />
+	    <meta name="format-detection" content="telephone=no" />
+	    <meta name="msapplication-tap-highlight" content="no" />
+	    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+	    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+	    <!-- Good default declaration:
+	    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+	    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+	    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+		* Enable inline JS: add 'unsafe-inline' to default-src
+		* Enable eval(): add 'unsafe-eval' to default-src
+	    * Create your own at http://cspisawesome.com
+	    -->
+	    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+
+		<title>Locofinder.com</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/dd.css" />
+		<script src="js/jquery.dd.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/flags.css" />
+		<style>
+			body
+			{
+				background:  url(images/background.jpg);
+				background-size: cover;
+
+			}
+			@font-face {
+				font-family: 'ChunkFive-Roman';
+				font-style: normal;
+				font-weight: normal;
+				src: local('ChunkFive-Roman'), url('Chunkfive.woff') format('woff');
+			}
+			@font-face {
+				font-family: "helve";
+				src: url('HelveticaNeue.ttf')  format('truetype');		 
+			}
+			.wrapper-form 
+			{
+				background: url(images/girl.gif) no-repeat , url(images/time.jpg) no-repeat;
+				background-position: 92% 40%, 5% 82%;
+				background-color: rgb(246,246,246);
+				color: grey;
+				font-family: "Segoe UI";
+				margin-top: 40px;
+				margin-bottom: 30px;
+  			    box-shadow: 5px 5px 5px rgb(100,100,100);
+			}
+			select, input, input[type="range"]
+			{
+				width: 60%;				
+				height: 35px;
+				border: 1px solid #ddd;
+				background-color: rgb(238,238,238);
+				padding: 0% 3%;
+			}
+			input[type="number"]{width:50px;}
+			.heading{color: orange;}
+			.sub-heading
+			{
+				color: rgb(100,100,100);
+				margin-bottom: 5%;
+			}
+			label{color: #89b4f9;}
+			h1
+			{
+				font-family: "ChunkFive-Roman";
+			}
+			select {
+			background: url(images/drop.png) no-repeat right rgb(238,238,238);
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background-position-x: right;
+			cursor: pointer;
+			}
+			#country
+			{
+			background: url(images/flag_us.gif) no-repeat 4% 50%, url(images/drop.png) no-repeat right rgb(238,238,238);
+			padding-left: 10%;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			cursor: pointer;
+			}
+			#country option {
+			    padding: 8px;
+			    padding-left: 45px;
+			}
+			#slider-3
+			{
+				width: 100%;
+				margin-top: 10px;
+			}
+			.key-head
+			{
+				margin: 1%;
+				margin-top: 5%;
+			}
+			#keyword
+			{
+				border-radius: 35px;
+				padding-left: 5px;
+				padding-right: 2%;
+				background: url(images/search.png) no-repeat right rgb(238,238,238);
+				background-size: 15px 15px;
+				background-position: 98% 50%; 
+			}
+			.btn-custom, .btn-custom:hover
+			{
+				background-color: orange;
+				color: white;
+				width: 65%;
+				height: 40px;
+				border-radius: 40px;
+				font-size: 15pt;
+				font-weight: bold;
+				padding: 0;
+				margin-bottom: 7%;
+			}
+			#keyword{
+				width: 100%;
+			}
+			.amazonoptions{
+				display: none;
+			}
+			.amazonoptions .first-child { 
+			    display:block !important;
+			}
+
+			.ddcommon{
+				width: 60% !important;
+				background: #E9EAEB;
+			}
+			.ddcommon .ddTitle{
+				width: 100%;
+			}
+
+			/*Injected css override*/
+			.dd .ddTitle .ddTitleText {
+			    padding: 3px 20px 5px 5px;
+			}
+			.dd .ddTitle {
+			    text-indent: 0px;
+			    cursor: default;
+			    height: 40px;
+			    background: #EEEEEE;
+			    border-width: 1px;
+			    border-style: solid;
+			    border-color: rgb(195, 195, 195);
+			    border-image: initial;
+			    padding: 0px;
+			    overflow: hidden;
+			    border-radius: 3px;
+			}
+			.dd .ddTitle span.ddTitleText img {
+			    text-align: left;
+			    padding: 0px 2px 0px 0px;
+			}
+			.ddlabel{
+				left: 30px;
+				top: 3px;
+				color: #838080;
+			}
+			.dd .divider{
+				right: 30px;
+			}
+			.dd .ddTitle span.ddTitleText {
+			    text-indent: 1px;
+			    line-height: 24px;
+			    overflow: visible;
+			}
+			.dd .ddTitle span.arrow {
+			    float: right;
+			    display: inline-block;
+			    width: 20px;
+			    height: 20px;
+			    cursor: pointer;
+			    background: url(images/dd_arrow.gif) 0px 0px no-repeat;
+			}
+			.dd .ddChild{
+				margin-top: -10px !important;
+			}
+			.dd {
+			    text-align: left;
+			    background-color: transparent;
+			    font-family: Arial, Helvetica, sans-serif;
+			    font-size: 12px;
+			    position: relative;
+			    border:none;
+			    cursor: pointer;
+			}
+			.ddcommon .ddTitle .ddTitleText img{
+				margin-top: 9px;
+			}
+
+			.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+				background:rgba(0, 0, 0, 0) url("images/round.png") no-repeat scroll 0 0;
+				border:none !important;
+				cursor: pointer;
+			}
+			a:focus{
+				outline: none;
+			}
+			.ui-slider-horizontal{
+				height: 0.6em;
+			}
+			.ui-slider-horizontal .ui-slider-handle{
+				top: -0.29em !important;
+			}
+
+			.ui-slider .ui-slider-range{
+				background:#7cb6e1 none repeat scroll 0 0; 
+			}
+
+			@media (max-width:640px){
+				#country{
+					padding-left:12%;
+				}
+				.rate,.price{
+					position: relative;
+					left: 16%;
+					top: -20px;
+				}
+				.price{
+					top: 0px;
+				}
+				
+				.rate #slider-3{
+					width: 70%;
+				}
+				#price{
+					left: 10px !important;
+				}
+				.wrapper-form{
+					background:url("images/girl.gif") no-repeat scroll 92% 40%, rgb(246, 246, 246) url("images/time.jpg") no-repeat scroll 1% 86%;
+				}
+				h1{
+					font-size: 28px;
+				}
+				.btn-custom, .btn-custom:hover{
+					font-size: 10pt;
+				}
+
+				.ddcommon{
+					width: 60% !important;
+					background: inherit;
+				}
+				.ddcommon .ddTitle{
+					width: 100%;
+				}
+			}
+        </style>
+		<!-- RANGE UI -->
+		<link href = "css/jquery-ui.css"
+         rel = "stylesheet">
+		<script src = "js/jquery-ui.js"></script>
+		<script>
+         $(function() {
+            $( "#slider-3" ).slider({
+               range:true,
+               min: 0,
+               max: 100,
+               values: [70,100],
+               slide: function( event, ui ) {
+                  $( "#price" ).val( ui.values[ 0 ] + "% - " + ui.values[ 1 ] + "%");
+               }
+            });
+            $( "#price" ).val( $( "#slider-3" ).slider( "values", 0 ) +
+               "% - " + $( "#slider-3" ).slider( "values", 1 ) + "%");
+         });
+        </script>
+	</head>
+	<body>
+		<div class="container " align="center">			
+			<div class="row">
+				<div class="wrapper-form col-md-6 col-sm-12 col-lg-5 col-xs-12 col-lg-offset-4">
+					<h1 class="heading">LocoFinder.com</h1>
+					<h4 class="sub-heading">Find the best amazon deals</h4>
+					<form method="get" action="">
+						<div class="form-group">
+							<select id="country" name="country" required>
+								<option value="https://www.amazon.co.uk" data-image="images/icons/blank.gif" data-imagecss="flag gb" data-title="United Kingdom" attr="uk">United Kingdom</option>
+								<option value="https://www.amazon.ca" data-image="images/icons/blank.gif" data-imagecss="flag ca" data-title="Canada" attr="ca">Canada</option>
+  								<option value="https://www.amazon.de" data-image="images/icons/blank.gif" data-imagecss="flag de" data-title="Germany" attr="de">Germany</option>
+  								<option value="https://www.amazon.com" data-image="images/icons/blank.gif" data-imagecss="flag us" data-title="United States" attr="us">United States</option>
+  								<option value="https://www.amazon.es" data-image="images/icons/blank.gif" data-imagecss="flag es" data-title="Spain" attr="es">Spain</option>
+  								<option value="https://www.amazon.fr" data-image="images/icons/blank.gif" data-imagecss="flag fr" data-title="France" attr="fr">France</option>
+  								<option value="https://www.amazon.it" data-image="images/icons/blank.gif" data-imagecss="flag it" data-title="Italy" attr="it">Italy</option>
+  								<option value="https://www.amazon.co.jp" data-image="images/icons/blank.gif" data-imagecss="flag jp" data-title="Japan" attr="jp">Japan</option>
+  								<option value="https://www.amazon.cn" data-image="images/icons/blank.gif" data-imagecss="flag cn" data-title="China" attr="cn">China</option>
+  								<option value="https://www.amazon.cn" data-image="images/icons/blank.gif" data-imagecss="flag tw" attr="cn" data-title="Taiwan">Taiwan</option>
+							</select>
+						</div>
+						<!-- <div class="form-group">
+							<select id="country" name="country" required>
+								<option value="https://www.amazon.ca" attr="ca" class="flag_ca">Amazon CA</option>
+								<option value="https://www.amazon.de" attr="de" class="flag_de">Amazon DE</option>
+								<option value="https://www.amazon.com" attr="en" class="flag_en-US">Amazon EN</option>
+								<option value="https://www.amazon.es" attr="es" class="flag_es">Amazon ES</option>
+								<option value="https://www.amazon.fr" attr="fr" class="flag_fr">Amazon FR</option>
+								<option value="https://www.amazon.it" attr="it" class="flag_it">Amazon IT</option>
+								<option value="https://www.amazon.co.jp" attr="jp" class="flag_jp">Amazon JA</option>
+								<option value="https://www.amazon.cn" attr="cn" class="flag_cn">Amazon CN</option>
+								<option value="https://www.amazon.cn" attr="cn" class="flag_cn">Amazon TW</option>
+							</select>
+						</div> -->
+						<div class="form-group select-container">
+							<select name="departmentselect" id="departmentselect" class="amazonoptions first-child uk" selected="selected" style="display: block !important;">
+								<option value="aps">Select Category</option>
+								<option value="pantry">Amazon Pantry</option>
+								<option value="instant-video">Amazon Video</option>
+								<option value="mobile-apps">Apps &amp; Games</option>
+								<option value="baby">Baby</option>
+								<option value="beauty">Beauty</option>
+								<option value="stripbooks">Books</option>
+								<option value="automotive">Car &amp; Motorbike</option>
+								<option value="popular">CDs &amp; Vinyl</option><option value="classical">Classical</option>
+								<option value="clothing">Clothing</option>
+								<option value="computers">Computers</option>
+								<option value="digital-music">Digital Music</option>
+								<option value="diy">DIY &amp; Tools</option>
+								<option value="dvd">DVD &amp; Blu-ray</option>
+								<option value="electronics">Electronics &amp; Photo</option>
+								<option value="outdoor">Garden &amp; Outdoors</option>
+								<option value="gift-cards">Gift Cards</option>
+								<option value="grocery">Grocery</option>
+								<option value="drugstore">Health &amp; Personal Care</option>
+								<option value="industrial">Industrial &amp; Scientific</option>
+								<option value="jewelry">Jewellery</option>
+								<option value="digital-text">Kindle Store</option>
+								<option value="kitchen">Kitchen &amp; Home</option>
+								<option value="appliances">Large Appliances</option>
+								<option value="lighting">Lighting</option>
+								<option value="dvd-bypost">LOVEFiLM by Post</option>
+								<option value="luggage">Luggage</option>
+								<option value="luxury-beauty">Luxury Beauty</option>
+								<option value="mi">Musical Instruments &amp; DJ</option>
+								<option value="videogames">PC &amp; Video Games</option>
+								<option value="pets">Pet Supplies</option>
+								<option value="shoes">Shoes &amp; Bags</option>
+								<option value="software">Software</option>
+								<option value="sports">Sports &amp; Outdoors</option>
+								<option value="office-products">Stationery &amp; Office Supplies</option>
+								<option value="toys">Toys &amp; Games</option>
+								<option value="vhs">VHS</option>
+								<option value="watches">Watches</option>
+							</select>
+							<select name="departmentselect" id="departmentselect" class="amazonoptions ca" selected="selected" >
+								<option value="aps">Select Category</option>
+								<option value="mobile-apps">Apps &amp; Games</option>
+								<option value="automotive">Automotive</option>
+								<option value="baby">Baby</option>
+								<option value="beauty">Beauty</option>
+								<option value="stripbooks">Books</option>
+								<option value="apparel">Clothing &amp; Accessories</option>
+								<option value="electronics">Electronics</option>
+								<option value="gift-cards">Gift Cards</option>
+								<option value="grocery">Grocery &amp; Gourmet Food</option>
+								<option value="hpc">Health &amp; Personal Care</option>
+								<option value="kitchen">Home &amp; Kitchen</option>
+								<option value="industrial">Industrial &amp; Scientific</option>
+								<option value="jewelry">Jewelry</option>
+								<option value="digital-text">Kindle Store</option>
+								<option value="french-books">Livres en français</option>
+								<option value="luggage">Luggage &amp; Bags</option>
+								<option value="dvd">Movies &amp; TV</option>
+								<option value="popular">Music</option>
+								<option value="mi">Musical Instruments, Stage &amp; Studio</option>
+								<option value="office-products">Office Products</option>
+								<option value="lawngarden">Patio, Lawn &amp; Garden</option>
+								<option value="pets">Pet Supplies</option>
+								<option value="software">Software</option>
+								<option value="sporting">Sports &amp; Outdoors</option>
+								<option value="tools">Tools &amp; Home Improvement</option>
+								<option value="toys">Toys &amp; Games</option>
+								<option value="videogames">Video Games</option>
+								<option value="watches">Watches</option>
+							</select>
+							<select name="departmentselect" id="departmentselect" class="amazonoptions us" selected="selected">
+								<option value="aps">Select Category</option>
+								<option value="instant-video">Amazon Video</option>
+								<option value="appliances">Appliances</option>
+								<option value="mobile-apps">Apps &amp; Games</option>
+								<option value="arts-crafts">Arts, Crafts &amp; Sewing</option>
+								<option value="automotive">Automotive</option>
+								<option value="baby-products">Baby</option>
+								<option value="beauty">Beauty</option>
+								<option value="stripbooks">Books</option>
+								<option value="popular">CDs &amp; Vinyl</option>
+								<option value="mobile">Cell Phones &amp; Accessories</option>
+								<option value="fashion">Clothing, Shoes &amp; Jewelry</option>
+								<option value="fashion-women"> — Women</option>
+								<option value="fashion-mens"> — Men</option>
+								<option value="fashion-girls"> — Girls</option>
+								<option value="fashion-boys"> — Boys</option>
+								<option value="fashion-baby"> — Baby</option>
+								<option value="collectibles">Collectibles &amp; Fine Art</option>
+								<option value="computers">Computers</option>
+								<option value="financial">Credit and Payment Cards</option>
+								<option value="digital-music">Digital Music</option>
+								<option value="electronics">Electronics</option>
+								<option value="gift-cards">Gift Cards</option>
+								<option value="grocery">Grocery &amp; Gourmet Food</option>
+								<option value="handmade">Handmade</option>
+								<option value="hpc">Health &amp; Personal Care</option>
+								<option value="garden">Home &amp; Kitchen</option>
+								<option value="local-services">Home Services</option>
+								<option value="industrial">Industrial &amp; Scientific</option>
+								<option value="digital-text">Kindle Store</option>
+								<option value="fashion-luggage">Luggage &amp; Travel Gear</option>
+								<option value="luxury-beauty">Luxury Beauty</option>
+								<option value="magazines">Magazine Subscriptions</option>
+								<option value="movies-tv">Movies &amp; TV</option>
+								<option value="mi">Musical Instruments</option>
+								<option value="office-products">Office Products</option>
+								<option value="lawngarden">Patio, Lawn &amp; Garden</option>
+								<option value="pets">Pet Supplies</option>
+								<option value="pantry">Prime Pantry</option>
+								<option value="software">Software</option>
+								<option value="sporting">Sports &amp; Outdoors</option>
+								<option value="tools">Tools &amp; Home Improvement</option>
+								<option value="toys-and-games">Toys &amp; Games</option>
+								<option value="videogames">Video Games</option>
+								<option value="wine">Wine</option>
+							</select>
+							<select name="departmentselect" id="departmentselect" class="amazonoptions es" selected="selected">
+								<option value="aps">Seleccionar Categoria</option>
+								<option value="mobile-apps">Apps y Juegos</option>
+								<option value="baby">Bebé</option>
+								<option value="beauty">Belleza</option>
+								<option value="diy">Bricolaje y herramientas</option>
+								<option value="gift-cards">Cheques regalo</option>
+								<option value="automotive">Coche y moto</option>
+								<option value="sporting">Deportes y aire libre</option>
+								<option value="electronics">Electrónica</option>
+								<option value="luggage">Equipaje</option>
+								<option value="kitchen">Hogar</option>
+								<option value="lighting">Iluminación</option>
+								<option value="industrial">Industria y ciencia</option>
+								<option value="computers">Informática</option>
+								<option value="mi">Instrumentos musicales</option>
+								<option value="lawngarden">Jardín</option>
+								<option value="jewelry">Joyería</option>
+								<option value="toys">Juguetes y juegos</option>
+								<option value="stripbooks">Libros</option>
+								<option value="english-books">Libros en idiomas extranjeros</option>
+								<option value="fashion">Moda</option>
+								<option value="digital-music">Música Digital</option>
+								<option value="popular">Música: CDs y vinilos</option>
+								<option value="office-products">Oficina y papelería</option>
+								<option value="dvd">Películas y TV</option>
+								<option value="watches">Relojes</option>
+								<option value="apparel">Ropa y accesorios</option>
+								<option value="hpc">Salud y cuidado personal</option>
+								<option value="software">Software</option>
+								<option value="grocery">Supermercado</option>
+								<option value="digital-text">Tienda Kindle</option>
+								<option value="videogames">Videojuegos</option>
+								<option value="shoes">Zapatos y complementos</option>
+							</select>
+							<select name="departmentselect" id="departmentselect" class="amazonoptions de" selected="selected">	
+								<option value="aps">Selectionner Categorie</option>
+								<option value="pets">Animalerie</option>
+								<option value="mobile-apps">Applis &amp; Jeux</option>
+								<option value="automotive">Auto et Moto</option>
+								<option value="luggage">Bagages</option>
+								<option value="beauty">Beauté et Parfum</option>
+								<option value="luxury-beauty">Beauté Prestige</option>
+								<option value="jewelry">Bijoux</option>
+								<option value="gift-cards">Boutique chèques-cadeaux</option>
+								<option value="digital-text">Boutique Kindle</option>
+								<option value="diy">Bricolage</option>
+								<option value="baby">Bébés &amp; Puériculture</option>
+								<option value="shoes">Chaussures et Sacs</option>
+								<option value="kitchen">Cuisine &amp; Maison</option>
+								<option value="dvd">DVD &amp; Blu-ray</option>
+								<option value="grocery">Epicerie</option>
+								<option value="office-products">Fournitures de bureau</option>
+								<option value="appliances">Gros électroménager</option>
+								<option value="electronics">High-Tech</option>
+								<option value="hpc">Hygiène et Santé</option>
+								<option value="computers">Informatique</option>
+								<option value="mi">Instruments de musique et Sono</option>
+								<option value="garden">Jardin</option>
+								<option value="toys">Jeux et Jouets</option>
+								<option value="videogames">Jeux vidéo</option>
+								<option value="english-books">Livres anglais et étrangers</option>
+								<option value="stripbooks">Livres en français</option>
+								<option value="software">Logiciels</option>
+								<option value="lighting">Luminaires et Eclairage</option>
+								<option value="watches">Montres</option>
+								<option value="popular">Musique: CD &amp; Vinyles</option>
+								<option value="classical">Musique classique</option><option value="industrial">Secteur industriel &amp; scientifique</option>
+								<option value="sports">Sports et Loisirs</option>
+								<option value="digital-music">Téléchargement de musique</option>
+								<option value="clothing">Vêtements et accessoires</option>
+							</select>
+							<select name="departmentselect" id="departmentselect" class="amazonoptions fr" selected="selected">		
+								<option value="aps">Selectionner Categorie</option>
+								<option value="pets">Animalerie</option>
+								<option value="mobile-apps">Applis &amp; Jeux</option>
+								<option value="automotive">Auto et Moto</option><option value="luggage">Bagages</option>
+								<option value="beauty">Beauté et Parfum</option><option value="luxury-beauty">Beauté Prestige</option>
+								<option value="jewelry">Bijoux</option>
+								<option value="gift-cards">Boutique chèques-cadeaux</option>
+								<option value="digital-text">Boutique Kindle</option>
+								<option value="diy">Bricolage</option>
+								<option value="baby">Bébés &amp; Puériculture</option>
+								<option value="shoes">Chaussures et Sacs</option>
+								<option value="kitchen">Cuisine &amp; Maison</option>
+								<option value="dvd">DVD &amp; Blu-ray</option>
+								<option value="grocery">Epicerie</option>
+								<option value="office-products">Fournitures de bureau</option>
+								<option value="appliances">Gros électroménager</option>
+								<option value="electronics">High-Tech</option>
+								<option value="hpc">Hygiène et Santé</option>
+								<option value="computers">Informatique</option>
+								<option value="mi">Instruments de musique et Sono</option>
+								<option value="garden">Jardin</option>
+								<option value="toys">Jeux et Jouets</option>
+								<option value="videogames">Jeux vidéo</option>
+								<option value="english-books">Livres anglais et étrangers</option>
+								<option value="stripbooks">Livres en français</option>
+								<option value="software">Logiciels</option>
+								<option value="lighting">Luminaires et Eclairage</option>
+								<option value="watches">Montres</option>
+								<option value="popular">Musique: CD &amp; Vinyles</option>
+								<option value="classical">Musique classique</option>
+								<option value="industrial">Secteur industriel &amp; scientifique</option>
+								<option value="sports">Sports et Loisirs</option>
+								<option value="digital-music">Téléchargement de musique</option>
+								<option value="clothing">Vêtements et accessoires</option>
+							</select>
+							<select name="departmentselect" id="departmentselect" class="amazonoptions it" selected="selected">
+								<option value="aps">Seleziona Categoria</option>
+								<option value="apparel">Abbigliamento</option>
+								<option value="grocery">Alimentari e cura della casa</option>
+								<option value="mobile-apps">App e Giochi</option>
+								<option value="automotive">Auto e Moto</option>
+								<option value="beauty">Bellezza</option>
+								<option value="gift-cards">Buoni Regalo</option>
+								<option value="office-products">Cancelleria e prodotti per ufficio</option>
+								<option value="kitchen">Casa e cucina</option>
+								<option value="popular">CD e Vinili</option>
+								<option value="electronics">Elettronica</option>
+								<option value="diy">Fai da te</option>
+								<option value="dvd">Film e TV</option>
+								<option value="garden">Giardino e giardinaggio</option>
+								<option value="toys">Giochi e giocattoli</option>
+								<option value="jewelry">Gioielli</option>
+								<option value="lighting">Illuminazione</option>
+								<option value="industrial">Industria e Scienza</option>
+								<option value="computers">Informatica</option>
+								<option value="digital-text">Kindle Store</option>
+								<option value="stripbooks">Libri</option>
+								<option value="english-books">Libri in altre lingue</option>
+								<option value="fashion">Moda</option>
+								<option value="digital-music">Musica Digitale</option>
+								<option value="watches">Orologi</option>
+								<option value="baby">Prima infanzia</option>
+								<option value="hpc">Salute e cura della persona</option>
+								<option value="shoes">Scarpe e borse</option>
+								<option value="software">Software</option>
+								<option value="sporting">Sport e tempo libero</option>
+								<option value="mi">Strumenti musicali e DJ</option>
+								<option value="luggage">Valigeria</option>
+								<option value="videogames">Videogiochi</option>
+							</select>							
+							
+							<select name="departmentselect" id="departmentselect" class="amazonoptions jp" selected="selected">
+								<option value="aps">すべてのカテゴリー</option>
+								<option value="digital-text">Kindleストア</option>
+								<option value="instant-video">Amazonビデオ</option>
+								<option value="digital-music">デジタルミュージック</option>
+								<option value="mobile-apps">Android アプリ</option>
+								<option value="stripbooks">本</option>
+								<option value="english-books">洋書</option>
+								<option value="popular">ミュージック</option>
+								<option value="classical">クラシック</option>
+								<option value="dvd">DVD</option>
+								<option value="videogames">TVゲーム</option>
+								<option value="software">PCソフト</option>
+								<option value="computers">パソコン・周辺機器</option>
+								<option value="electronics">家電&amp;カメラ</option>
+								<option value="office-products">文房具・オフィス用品</option>
+								<option value="kitchen">ホーム&amp;キッチン</option>
+								<option value="pets">ペット用品</option>
+								<option value="hpc">ドラッグストア</option>
+								<option value="beauty">ビューティー</option>
+								<option value="food-beverage">食品・飲料・お酒</option>
+								<option value="baby">ベビー&amp;マタニティ</option>
+								<option value="apparel">服＆ファッション小物</option>
+								<option value="shoes">シューズ＆バッグ</option>
+								<option value="watch">腕時計</option>
+								<option value="jewelry">ジュエリー</option>
+								<option value="toys">おもちゃ</option>
+								<option value="hobby">ホビー</option>
+								<option value="mi">楽器</option>
+								<option value="sporting">スポーツ&amp;アウトドア</option>
+								<option value="automotive">カー・バイク用品</option>
+								<option value="diy">DIY・工具</option>
+								<option value="appliances">大型家電</option>
+								<option value="financial">クレジットカード</option>
+								<option value="gift-cards">ギフト券</option>
+								<option value="industrial">産業・研究開発用品</option>
+								<option value="pantry">Amazonパントリー</option>
+							</select>
+							<select name="departmentselect" id="departmentselect" class="amazonoptions cn" selected="selected">	
+								<option value="aps">全部分类</option>
+								<option value="digital-text">Kindle商店</option><option value="mobile-apps">应用程序和游戏</option>
+								<option value="amazon-global-store">亚马逊海外购</option>
+								<option value="stripbooks">图书</option>
+								<option value="music">音乐</option>
+								<option value="videogames">游戏/娱乐</option>
+								<option value="video">音像</option>
+								<option value="software">软件</option>
+								<option value="audio-visual-education">教育音像</option>
+								<option value="communications">手机/通讯</option><option value="photo-video">摄影/摄像</option>
+								<option value="electronics">电子</option>
+								<option value="music-players">数码影音</option>
+								<option value="computers">电脑/IT</option>
+								<option value="office-products">办公用品</option><option value="home-appliances">小家电</option>
+								<option value="appliances">大家电</option>
+								<option value="audio-visual">电视/音响</option>
+								<option value="home">家用</option>
+								<option value="home-substore">家居</option>
+								<option value="kitchen">厨具</option>
+								<option value="home-improvement">家居装修</option>
+								<option value="pets">宠物用品</option>
+								<option value="grocery">食品</option>
+								<option value="wine">酒</option>
+								<option value="beauty">美容化妆</option>
+								<option value="hpc">个护健康</option>
+								<option value="baby">母婴用品</option>
+								<option value="toys-and-games">玩具</option>
+								<option value="sporting">运动户外休闲</option>
+								<option value="apparel">服饰箱包</option>
+								<option value="shoes">鞋靴</option>
+								<option value="watches">钟表</option>
+								<option value="jewelry">珠宝首饰</option>
+								<option value="automotive">汽车用品</option>
+								<option value="mi">乐器</option>
+								<option value="gift-cards">礼品卡</option>
+								<option value="luxury-beauty">LuxuryBeauty高端美妆店</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-2 text-left col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2">
+								<h5 class="key-head">What are you looking for?</h5>
+								<input type="text" id="keyword" name="keyword" placeholder="Galaxy S5" style="padding: 0% 3%"/>
+							</div>
+							<div class="col-md-2"></div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-6 col-xs-10 col-lg-6 col-sm-12 text-left rate">
+								 <h5 class="key-head rate-disc" for = "price" style="margin-bottom: 0">Rate of Discount</h5>
+								 <input type = "text" id = "price" style = "border: 0px none; color: rgb(185, 205, 109); font-weight: bold; background-color:transparent; text-align: center; position: absolute; left: 40px; top: 48px;">
+								 <div id = "slider-3"></div>
+							</div>
+							<div class="col-md-6 col-xs-10 col-lg-6 col-sm-12 text-left price">
+								<div class="form-group">
+									<div data-role="rangeslider">
+										<h5 class="price-head" for="price">Range of Price</h5>
+										<span class="key-from">From: </span><input type="number" name="price-min" id="price-min" min="0" />
+										<span class="key-to">To:</span> <input type="number" name="price-max" id="price-max" min="0" />
+								    </div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<select name="sort" id="sort" class="" selected="selected" style="display: block !important;">
+								<option value="relevancerank"> Relevance </option>
+								<option value="salesrank"> Bestselling </option>
+								<option value="price"> Price: Low to High </option>
+								<option value="-price"> Price: High to Low </option>
+								<option value="titlerank"> Alphabetical: A to Z </option>
+								<option value="-titlerank">  Alphabetical: Z to A </option>
+								<option value="reviewrank"> Avg Customer Review </option>
+								<option value="pmrank"> Featured Items </option>
+							</select>
+						</div>
+						<input type="hidden" name="category_name" value="" class="category_name" id="category_name">
+						<div class="form-group">
+							<button class="btn btn-custom" type="button" onclick="searchAmz()" id="btn-custom">Find Amazon Deals</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function searchAmz()
+			{
+				var country = document.getElementById("country").value;
+				var cat =  document.getElementById("category_name").value;
+				var pct =  $( "#slider-3" ).slider( "values", 0 )  + "-" + $( "#slider-3" ).slider( "values", 1 );
+				var sort = document.getElementById("sort").value;
+				var keywords = document.getElementById("keyword").value;
+				var price = "";
+				var min = document.getElementById("price-min").value ;
+				var max = document.getElementById("price-max").value;
+				if( min != "" && max != "" )
+					price = min + "00-" + max + "00";
+				window.open(
+				  country + '/gp/search/?search-alias='+cat+'&pct-off='+pct+'&sort='+sort+'&field-keywords='+keywords+'&field-price='+price+'&tag=reyesdigitales-21',
+				  '_blank'
+				);
+			}
+			function loadLang(lang) {
+				
+			var xmlhttp = new XMLHttpRequest();
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+				   if (xmlhttp.status == 200) {
+					   var msg = JSON.parse(xmlhttp.responseText);
+					   document.getElementsByClassName("heading")[0].innerHTML = msg["AppTitle"]["message"];
+					   document.getElementsByClassName("sub-heading")[0].innerHTML = msg["subHeading"]["message"];
+					   document.getElementsByClassName("key-head")[0].innerHTML = msg["Product"]["message"];
+					   document.getElementsByClassName("rate-disc")[0].innerHTML = msg["Discount"]["message"];
+					   document.getElementsByClassName("price-head")[0].innerHTML = msg["Price"]["message"];
+					   document.getElementsByClassName("key-from")[0].innerHTML = msg["From"]["message"];
+					   document.getElementsByClassName("key-to")[0].innerHTML = msg["To"]["message"];
+					   document.getElementsByClassName("btn-custom")[0].innerHTML = msg["btnSearchTxt"]["message"];					   
+				   }
+				   else if (xmlhttp.status == 400) {
+				   }
+				   else {
+				   }
+				}
+			};
+			xmlhttp.open("GET", "_locales/"+lang+"/messages.json", true);
+			xmlhttp.send();
+		}
+		$(document).ready(function(){
+			$('.select-container select:first-child').show();
+			var tmp = document.getElementById("country").value;
+			var userLang = navigator.language || navigator.userLanguage; 
+			$("#country").msDropdown();
+			loadLang(userLang.split('-')[0]);
+		});
+	    $(function() {
+	        $("#country").change(function(){
+	            var element = $(this).find('option:selected'); 
+	            var attr = element.attr("attr");
+	            $('#aioConceptName').find(":selected").text();
+	            $('.amazonoptions').hide();
+	            $('.amazonoptions.'+attr).show();
+	        });
+	    });
+	    $(".amazonoptions").change(function(){
+            var catname = $(this).find(":selected").val();
+            $('.category_name').val(catname);
+        });
+		</script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+	</body>
+</html>

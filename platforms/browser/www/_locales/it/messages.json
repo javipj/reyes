@@ -1,0 +1,130 @@
+{
+   "AppTitle": {
+      "description": "Application Title",
+      "message": "Amazon Discount Finder:"
+   },
+   "Choose": {
+      "description": "Choose:",
+      "message": "Scegli Categoria:"
+   },
+   "SelCountry": {
+      "description": "Select Country",
+      "message": "Seleziona il Paese"
+   },
+   "SelDepartment": {
+      "description": "Select Department",
+      "message": "Tutte le categorie"
+   },
+   "SelDiscountRange": {
+      "description": "Discount range:",
+      "message": "Range di Sconto:"
+   },
+   "SelFrom": {
+      "description": "From ",
+      "message": "Da "
+   },
+   "SelKeyword": {
+      "description": "Keyword/s (optional):",
+      "message": "Keyword (opzionale):"
+   },
+   "SelPrice": {
+      "description": " Price: (Optional)",
+      "message": "Prezzo: (opzionale) "
+   },
+   "SelShowFree": {
+      "description": "Only show free delivery ",
+      "message": " Only show free delivery "
+   },
+   "SelSortBy": {
+      "description": "Sort By: ",
+      "message": "Ordina per: "
+   },
+   "SelTo": {
+      "description": "To ",
+      "message": "a "
+   },
+   "SortAtoZ": {
+      "description": "Alphabetical: A to Z",
+      "message": " Alfabetico: dalla A alla Z "
+   },
+   "SortBestselling": {
+      "description": "Bestselling",
+      "message": " Popolarità "
+   },
+   "SortCustReview": {
+      "description": "Avg Customer Review",
+      "message": " Media recensioni clienti "
+   },
+   "SortFeatureItems": {
+      "description": "Featured Items",
+      "message": " Articoli in evidenza "
+   },
+   "SortHtoL": {
+      "description": "Price: High to Low",
+      "message": " Prezzo: Decrescente "
+   },
+   "SortLtoH": {
+      "description": "Price: Low to High",
+      "message": " Prezzo: Crescente "
+   },
+   "SortRelevance": {
+      "description": "Relevance",
+      "message": " Rilevanza "
+   },
+   "SortZtoA": {
+      "description": " Alphabetical: Z to A",
+      "message": "Alfabetico: dalla Z alla A"
+   },
+   "btnSearchTxt": {
+      "description": "Button lable",
+      "message": " Cerca "
+   },
+   "extDescription": {
+      "description": "Description of the Application.",
+      "message": "Amazon Discount Finder ti aiuta a trovare le migliori offerte di prodotti Amazon fino a 90% di sconto."
+   },
+   "extName": {
+      "description": "Extension Name.",
+      "message": "Amazon Discount Finder"
+   },
+   "sellowrangeDiscount": {
+      "description": "Select lower range for pricier or niche goods",
+      "message": "Seleziona un range di sconto basso per i prodotti più costosi o di nicchia"
+   },
+   "yourDiscount": {
+      "description": "Pick your discount:",
+      "message": "Scegli il tuo sconto:"
+   },
+   "subHeading":{
+      "description": "Find the best Amazon deals",
+      "message": "Trova le migliori offerte per Amazon"
+   },
+   "Product":{
+      "description": "What are you looking for?",
+      "message": "Che cosa sta cercando?"
+   },
+   "Discount":{
+      "description": "Rate of Discount",
+      "message": "Tasso di Sconto"
+   },
+   "Price":{
+      "description": "Range of Price",
+      "message": "Gamma di prezzo"
+   },
+   "Sort":{
+      "description": "Pick your discount:",
+      "message": "Scegli il tuo sconto:"
+   },
+   "From":{
+      "description": "From:",
+      "message": "A partire dal:"
+   },
+   "To":{
+      "description": "To:",
+      "message": "a:"
+   },
+   "btnSearchTxt":{
+      "description": "Find Amazon Deals",
+      "message": "Trova offerte Amazon"
+   }
+}

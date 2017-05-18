@@ -1,0 +1,130 @@
+{
+   "AppTitle": {
+      "description": "Application Title",
+      "message": "Amazonの割引ファインダー："
+   },
+   "Choose": {
+      "description": "Choose:",
+      "message": "選択します"
+   },
+   "SelCountry": {
+      "description": "Select Country",
+      "message": "国を選択"
+   },
+   "SelDepartment": {
+      "description": "Select Department",
+      "message": "デパートメントから選択"
+   },
+   "SelDiscountRange": {
+      "description": "Discount range:",
+      "message": "割引範囲："
+   },
+   "SelFrom": {
+      "description": "From ",
+      "message": "からの "
+   },
+   "SelKeyword": {
+      "description": "Keyword/s (optional):",
+      "message": "キーワード/秒（オプション）:"
+   },
+   "SelPrice": {
+      "description": " Price: (Optional)",
+      "message": " 価格：（オプション）"
+   },
+   "SelShowFree": {
+      "description": "Only show free delivery ",
+      "message": " 唯一の無料配達を示す "
+   },
+   "SelSortBy": {
+      "description": "Sort By: ",
+      "message": "並べ替え： "
+   },
+   "SelTo": {
+      "description": "To ",
+      "message": "へ "
+   },
+   "SortAtoZ": {
+      "description": "Alphabetical: A to Z",
+      "message": " アルファベット順：AからZ "
+   },
+   "SortBestselling": {
+      "description": "Bestselling",
+      "message": " 人気度 "
+   },
+   "SortCustReview": {
+      "description": "Avg Customer Review",
+      "message": " レビューの評価順 "
+   },
+   "SortFeatureItems": {
+      "description": "Featured Items",
+      "message": " おすすめアイテム "
+   },
+   "SortHtoL": {
+      "description": "Price: High to Low",
+      "message": " 価格の高い順番 "
+   },
+   "SortLtoH": {
+      "description": "Price: Low to High",
+      "message": " 価格の安い順番 "
+   },
+   "SortRelevance": {
+      "description": "Relevance",
+      "message": " 関連性 "
+   },
+   "SortZtoA": {
+      "description": " Alphabetical: Z to A",
+      "message": "  アルファベット順：AからZまで "
+   },
+   "btnSearchTxt": {
+      "description": "Button lable",
+      "message": " 検索割引 "
+   },
+   "extDescription": {
+      "description": "Description of the Application.",
+      "message": "Amazon Discount Finder For US, UK, DE, FR, IT, Es, JA, CH and  CA. 割引ファインダーでは、90％の割引件まで最高のお得な情報を見つけることができます。"
+   },
+   "extName": {
+      "description": "Extension Name.",
+      "message": "Amazon Discount Finder"
+   },
+   "sellowrangeDiscount": {
+      "description": "Select lower range for pricier or niche goods",
+      "message": "高価やニッチ商品の下限範囲を選択"
+   },
+   "yourDiscount": {
+      "description": "Pick your discount:",
+      "message": "あなたの割引を選んでください："
+   },
+   "subHeading":{
+      "description": "Find the best Amazon deals",
+      "message": "アマゾンの詳細ページへ"
+   },
+   "Product":{
+      "description": "What are you looking for?",
+      "message": "何を探していますか？"
+   },
+   "Discount":{
+      "description": "Rate of Discount",
+      "message": "割引率"
+   },
+   "Price":{
+      "description": "Range of Price",
+      "message": "価格の範囲"
+   },
+   "Sort":{
+      "description": "Pick your discount:",
+      "message": "あなたの割引を選ぶ:"
+   },
+   "From":{
+      "description": "From:",
+      "message": "から:"
+   },
+   "To":{
+      "description": "To:",
+      "message": "に:"
+   },
+   "btnSearchTxt":{
+      "description": "Find Amazon Deals",
+      "message": "Amazonについて"
+   }
+}

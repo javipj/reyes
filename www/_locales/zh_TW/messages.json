@@ -1,0 +1,126 @@
+{
+   "AppTitle": {
+      "description": "Application Title",
+      "message": "Amazon 折扣搜索："
+   },
+   "Choose": {
+      "description": "Choose:",
+      "message": "选择："
+   },
+   "SelCountry": {
+      "description": "Select Country",
+      "message": "选择国家"
+   },
+   "SelDepartment": {
+      "description": "Select Department",
+      "message": "选择部门"
+   },
+   "SelDiscountRange": {
+      "description": "Discount range:",
+      "message": "折扣范围："
+   },
+   "SelKeyword": {
+      "description": "Keyword/s (optional):",
+      "message": "关键字/秒（可选）："
+   },
+   "SelPrice": {
+      "description": " Price: (Optional)",
+      "message": " 价格：（可选）"
+   },
+   "SelShowFree": {
+      "description": "Only show free delivery ",
+      "message": " 只显示免费送货"
+   },
+   "SelSortBy": {
+      "description": "Sort By: ",
+      "message": "排序方式："
+   },
+   "SelTo": {
+      "description": "To ",
+      "message": "To "
+   },
+   "SortAtoZ": {
+      "description": "Alphabetical: A to Z",
+      "message": " 字母：A到Z"
+   },
+   "SortBestselling": {
+      "description": "Bestselling",
+      "message": " 最畅销 "
+   },
+   "SortCustReview": {
+      "description": "Avg Customer Review",
+      "message": " 用户评分 "
+   },
+   "SortFeatureItems": {
+      "description": "Featured Items",
+      "message": " 精选项目 "
+   },
+   "SortHtoL": {
+      "description": "Price: High to Low",
+      "message": " 价格：由高到低"
+   },
+   "SortLtoH": {
+      "description": "Price: Low to High",
+      "message": " 价格：由低到高 "
+   },
+   "SortRelevance": {
+      "description": "Relevance",
+      "message": " 时尚畅销 "
+   },
+   "SortZtoA": {
+      "description": " Alphabetical: Z to A",
+      "message": "  字母：Z到A "
+   },
+   "btnSearchTxt": {
+      "description": "Button lable",
+      "message": " 搜索优惠"
+   },
+   "extDescription": {
+      "description": "Description of the Application.",
+      "message": "Amazon Discount Finder For US, UK, Germany, France, Italy, Spain, Japan , China and  Canada. 折扣搜索帮助您找到最优惠的价格高达90％的折扣。"
+   },
+   "extName": {
+      "description": "Extension Name.",
+      "message": "Amazon Discount Finder"
+   },
+   "sellowrangeDiscount": {
+      "description": "Select lower range for pricier or niche goods",
+      "message": "选择较低的高价或利基商品范围"
+   },
+   "yourDiscount": {
+      "description": "Pick your discount:",
+      "message": "选择您的折扣："
+   },
+   "subHeading":{
+      "description": "Find the best Amazon deals",
+      "message": "尋找最優惠的亞馬遜優惠"
+   },
+   "Product":{
+      "description": "What are you looking for?",
+      "message": "你在找什麼？"
+   },
+   "Discount":{
+      "description": "Rate of Discount",
+      "message": "折扣率"
+   },
+   "Price":{
+      "description": "Range of Price",
+      "message": "價格範圍"
+   },
+   "Sort":{
+      "description": "Pick your discount:",
+      "message": "選擇你的折扣:"
+   },
+   "From":{
+      "description": "From:",
+      "message": "從:"
+   },
+   "To":{
+      "description": "To:",
+      "message": "至:"
+   },
+   "btnSearchTxt":{
+      "description": "Find Amazon Deals",
+      "message": "尋找最優惠的亞馬遜優惠"
+   }
+}
