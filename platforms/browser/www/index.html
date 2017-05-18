@@ -762,7 +762,7 @@
             $('.category_name').val(catname);
         });
 
-
+var userLang;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -770,14 +770,14 @@ function onDeviceReady() {
 
 	$('.select-container select:first-child').show();
 	var tmp = document.getElementById("country").value;
-	var userLang;
+	
 
 	navigator.globalization.getPreferredLanguage(
 		function (language) {    
 		    userLang = language.value; 
 		    $("#country").msDropdown();
 	    	    loadLang(userLang.split("-")[0]);
-		    
+		    alert(userLang);
 		},
 		function () {
 		    //alert('Error getting language\n');
