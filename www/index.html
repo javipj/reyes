@@ -748,7 +748,20 @@
 		$(document).ready(function(){
 			$('.select-container select:first-child').show();
 			var tmp = document.getElementById("country").value;
-			var userLang = navigator.language || navigator.userLanguage; 
+			var userLang;
+
+			navigator.globalization.getPreferredLanguage(
+				function (language) {    
+				    userLang = language.value; 
+				    alert('language: ' + language.value + '\n');
+				},
+				function () {
+				    alert('Error getting language\n');
+				}
+			    );
+
+
+
 			$("#country").msDropdown();
 			loadLang(userLang.split('-')[0]);
 		});
