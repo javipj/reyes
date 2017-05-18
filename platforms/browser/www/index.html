@@ -30,240 +30,11 @@
 		<link rel="stylesheet" type="text/css" href="css/dd.css" />
 		<script src="js/jquery.dd.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/flags.css" />
-		<style>
-			body
-			{
-				background:  url(images/background.jpg);
-				background-size: cover;
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		
 
-			}
-			@font-face {
-				font-family: 'ChunkFive-Roman';
-				font-style: normal;
-				font-weight: normal;
-				src: local('ChunkFive-Roman'), url('Chunkfive.woff') format('woff');
-			}
-			@font-face {
-				font-family: "helve";
-				src: url('HelveticaNeue.ttf')  format('truetype');		 
-			}
-			.wrapper-form 
-			{
-				background: url(images/girl.gif) no-repeat , url(images/time.jpg) no-repeat;
-				background-position: 92% 40%, 5% 82%;
-				background-color: rgb(246,246,246);
-				color: grey;
-				font-family: "Segoe UI";
-				margin-top: 40px;
-				margin-bottom: 30px;
-  			    box-shadow: 5px 5px 5px rgb(100,100,100);
-			}
-			select, input, input[type="range"]
-			{
-				width: 60%;				
-				height: 35px;
-				border: 1px solid #ddd;
-				background-color: rgb(238,238,238);
-				padding: 0% 3%;
-			}
-			input[type="number"]{width:50px;}
-			.heading{color: orange;}
-			.sub-heading
-			{
-				color: rgb(100,100,100);
-				margin-bottom: 5%;
-			}
-			label{color: #89b4f9;}
-			h1
-			{
-				font-family: "ChunkFive-Roman";
-			}
-			select {
-			background: url(images/drop.png) no-repeat right rgb(238,238,238);
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			background-position-x: right;
-			cursor: pointer;
-			}
-			#country
-			{
-			background: url(images/flag_us.gif) no-repeat 4% 50%, url(images/drop.png) no-repeat right rgb(238,238,238);
-			padding-left: 10%;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			cursor: pointer;
-			}
-			#country option {
-			    padding: 8px;
-			    padding-left: 45px;
-			}
-			#slider-3
-			{
-				width: 100%;
-				margin-top: 10px;
-			}
-			.key-head
-			{
-				margin: 1%;
-				margin-top: 5%;
-			}
-			#keyword
-			{
-				border-radius: 35px;
-				padding-left: 5px;
-				padding-right: 2%;
-				background: url(images/search.png) no-repeat right rgb(238,238,238);
-				background-size: 15px 15px;
-				background-position: 98% 50%; 
-			}
-			.btn-custom, .btn-custom:hover
-			{
-				background-color: orange;
-				color: white;
-				width: 65%;
-				height: 40px;
-				border-radius: 40px;
-				font-size: 15pt;
-				font-weight: bold;
-				padding: 0;
-				margin-bottom: 7%;
-			}
-			#keyword{
-				width: 100%;
-			}
-			.amazonoptions{
-				display: none;
-			}
-			.amazonoptions .first-child { 
-			    display:block !important;
-			}
-
-			.ddcommon{
-				width: 60% !important;
-				background: #E9EAEB;
-			}
-			.ddcommon .ddTitle{
-				width: 100%;
-			}
-
-			/*Injected css override*/
-			.dd .ddTitle .ddTitleText {
-			    padding: 3px 20px 5px 5px;
-			}
-			.dd .ddTitle {
-			    text-indent: 0px;
-			    cursor: default;
-			    height: 40px;
-			    background: #EEEEEE;
-			    border-width: 1px;
-			    border-style: solid;
-			    border-color: rgb(195, 195, 195);
-			    border-image: initial;
-			    padding: 0px;
-			    overflow: hidden;
-			    border-radius: 3px;
-			}
-			.dd .ddTitle span.ddTitleText img {
-			    text-align: left;
-			    padding: 0px 2px 0px 0px;
-			}
-			.ddlabel{
-				left: 30px;
-				top: 3px;
-				color: #838080;
-			}
-			.dd .divider{
-				right: 30px;
-			}
-			.dd .ddTitle span.ddTitleText {
-			    text-indent: 1px;
-			    line-height: 24px;
-			    overflow: visible;
-			}
-			.dd .ddTitle span.arrow {
-			    float: right;
-			    display: inline-block;
-			    width: 20px;
-			    height: 20px;
-			    cursor: pointer;
-			    background: url(images/dd_arrow.gif) 0px 0px no-repeat;
-			}
-			.dd .ddChild{
-				margin-top: -10px !important;
-			}
-			.dd {
-			    text-align: left;
-			    background-color: transparent;
-			    font-family: Arial, Helvetica, sans-serif;
-			    font-size: 12px;
-			    position: relative;
-			    border:none;
-			    cursor: pointer;
-			}
-			.ddcommon .ddTitle .ddTitleText img{
-				margin-top: 9px;
-			}
-
-			.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
-				background:rgba(0, 0, 0, 0) url("images/round.png") no-repeat scroll 0 0;
-				border:none !important;
-				cursor: pointer;
-			}
-			a:focus{
-				outline: none;
-			}
-			.ui-slider-horizontal{
-				height: 0.6em;
-			}
-			.ui-slider-horizontal .ui-slider-handle{
-				top: -0.29em !important;
-			}
-
-			.ui-slider .ui-slider-range{
-				background:#7cb6e1 none repeat scroll 0 0; 
-			}
-
-			@media (max-width:640px){
-				#country{
-					padding-left:12%;
-				}
-				.rate,.price{
-					position: relative;
-					left: 16%;
-					top: -20px;
-				}
-				.price{
-					top: 0px;
-				}
-				
-				.rate #slider-3{
-					width: 70%;
-				}
-				#price{
-					left: 10px !important;
-				}
-				.wrapper-form{
-					background:url("images/girl.gif") no-repeat scroll 92% 40%, rgb(246, 246, 246) url("images/time.jpg") no-repeat scroll 1% 86%;
-				}
-				h1{
-					font-size: 28px;
-				}
-				.btn-custom, .btn-custom:hover{
-					font-size: 10pt;
-				}
-
-				.ddcommon{
-					width: 60% !important;
-					background: inherit;
-				}
-				.ddcommon .ddTitle{
-					width: 100%;
-				}
-			}
-        </style>
 		<!-- RANGE UI -->
-		<link href = "css/jquery-ui.css"
-         rel = "stylesheet">
+		<link href = "css/jquery-ui.css"      rel = "stylesheet">
 		<script src = "js/jquery-ui.js"></script>
 		<script>
          $(function() {
@@ -719,6 +490,32 @@
 				  '_system'
 				);
 			}
+
+
+
+			function loadLang2(lang){
+
+
+
+
+				$.getJSON( "_locales/"+lang+"/messages.json", function( data ) {
+
+				   document.getElementsByClassName("heading")[0].innerHTML = data["AppTitle"]["message"];
+				   document.getElementsByClassName("sub-heading")[0].innerHTML = data["subHeading"]["message"];
+				   document.getElementsByClassName("key-head")[0].innerHTML = data["Product"]["message"];
+				   document.getElementsByClassName("rate-disc")[0].innerHTML = data["Discount"]["message"];
+				   document.getElementsByClassName("price-head")[0].innerHTML = data["Price"]["message"];
+				   document.getElementsByClassName("key-from")[0].innerHTML = data["From"]["message"];
+				   document.getElementsByClassName("key-to")[0].innerHTML = data["To"]["message"];
+				   document.getElementsByClassName("btn-custom")[0].innerHTML = data["btnSearchTxt"]["message"];	
+				});
+
+
+
+
+
+
+			}
 			function loadLang(lang) {
 				
 			var xmlhttp = new XMLHttpRequest();
@@ -776,7 +573,7 @@ function onDeviceReady() {
 		function (language) {    
 		    userLang = language.value; 
 		    $("#country").msDropdown();
-	    	    loadLang(userLang.split("-")[0]);
+	    	    loadLang2(userLang.split("-")[0]);
 		    alert(userLang);
 		},
 		function () {
